@@ -4,6 +4,7 @@ const route = require("./routes/api");
 
 const app = express();
 
+route.healthCheck(app); // health check route
 route.mountApiV1(app);
 
 app.listen(config.port, () => {

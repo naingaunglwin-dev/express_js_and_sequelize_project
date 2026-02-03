@@ -1,6 +1,20 @@
 const user = require('./v1/user');
 const project = require('./v1/project');
 
+/**
+ * Health check route
+ *
+ * GET /health
+ *
+ * @param {Express.Application} app 
+ */
+exports.healthCheck = (app) => {
+  app.get('/health', (req, res) => {
+    res.json({
+      status: 'ok',
+    });
+  })
+}
 
 /**
  * Map all api v1 routes to express application
