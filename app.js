@@ -1,8 +1,11 @@
 const express = require("express");
 const config = require("./config/app");
 const route = require("./routes/api");
+const logger = require("./middlewares/logger");
 
 const app = express();
+
+app.use(logger);
 
 route.healthCheck(app); // health check route
 route.mountApiV1(app);
