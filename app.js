@@ -6,6 +6,7 @@ const logger = require("./middlewares/logger");
 const app = express();
 
 app.use(logger);
+app.use(express.json());
 
 route.healthCheck(app); // health check route
 route.mountApiV1(app);
